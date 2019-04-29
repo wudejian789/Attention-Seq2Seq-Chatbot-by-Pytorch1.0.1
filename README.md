@@ -77,7 +77,7 @@ Or you can use the beam search to generate the answer.
 ```python
 chatbot.predictByBeamSearch("什么是ai", isRandomChoose=True, beamWidth=10)
 ```
->First parameter is your question;
+>First parameter is your question;  
 >***isRandomChoose*** determines whether probability sampling is performed in the final beamwidth answers.  
 >***beamWidth*** is the search width in beam search;   
 
