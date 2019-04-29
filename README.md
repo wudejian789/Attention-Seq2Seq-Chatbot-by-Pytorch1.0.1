@@ -1,6 +1,6 @@
 Attention-Seq2Seq-Chatbot-by-Pytorch1.0.1
 ===
-> Note: If there's any error like "No module named 'xxx'", please use command "pip install xxx"
+>Note: If there's any error like "No module named 'xxx'", please use command "pip install xxx"
 # 1. Import the module
 ```python
 from model.nnModel import *
@@ -34,10 +34,10 @@ model = Seq2Seq(dataClass, featureSize=256, hiddenSize=256,
 >***hiddenSize*** is your RNN hidden state size;
 >***attnType*** is your attention type. It can be 'B' for using Bahdanau Attention Structure or 'L' for using Luong Structure;
 > ***attnMethod*** is Luong Attention Method. It can be 'dot', 'general' or 'concat'.
-> ***encoderNumLayers*** is the layer number of your encoder RNN;
-> ***decoderNumlayers*** is the layer number of your decoder RNN;
-> ***encoderBidirectional*** is if your encoder RNN is bidirectional;
-> ***device*** is your building environment. If using CPU, then device=torch.device('cpu'); if using GPU, then device=torch.device('cuda:0');
+>***encoderNumLayers*** is the layer number of your encoder RNN;
+>***decoderNumlayers*** is the layer number of your decoder RNN;
+>***encoderBidirectional*** is if your encoder RNN is bidirectional;
+>***device*** is your building environment. If using CPU, then device=torch.device('cpu'); if using GPU, then device=torch.device('cuda:0');
 
 Then you can train your model.
 ```python
