@@ -33,7 +33,11 @@ model = Seq2Seq(dataClass, featureSize=256, hiddenSize=256,
 >***featureSize*** is your word vector size;
 >***hiddenSize*** is your RNN hidden state size;
 >***attnType*** is your attention type. It can be 'B' for using Bahdanau Attention Structure or 'L' for using Luong Structure;
+<<<<<<< HEAD
 > ***attnMethod*** is Luong Attention Method. It can be 'dot', 'general' or 'concat'.
+=======
+>***attnMethod*** is Luong Attention Method. It can be 'dot', 'general' or 'concat'.
+>>>>>>> 713eb3c4433a95b920de1b5328c57c94b2ca24a3
 >***encoderNumLayers*** is the layer number of your encoder RNN;
 >***decoderNumlayers*** is the layer number of your decoder RNN;
 >***encoderBidirectional*** is if your encoder RNN is bidirectional;
