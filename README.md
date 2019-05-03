@@ -1,7 +1,9 @@
 Attention-Seq2Seq-Chatbot-by-Pytorch1.0.1
 ===
 ![totalModel](https://github.com/wudejian789/Attention-Seq2Seq-Chatbot-by-Pytorch1.0.1/blob/master/image/totalModel.png)
->Note: If there's any error like "No module named 'xxx'", please use command "pip install xxx" to repair.
+>Note: If there's any error like "No module named 'xxx'", please use command "pip install xxx" to repair.  
+>Feel free to add my QQ:793729558 to discuss with me.  
+>Also you can add the QQ group:647303915 to discuss together.
 
 # 1. Import the module
 ```python
