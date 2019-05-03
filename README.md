@@ -2,6 +2,7 @@ Attention-Seq2Seq-Chatbot-by-Pytorch1.0.1
 ===
 ![totalModel](https://github.com/wudejian789/Attention-Seq2Seq-Chatbot-by-Pytorch1.0.1/blob/master/image/totalModel.png)
 >Note: If there's any error like "No module named 'xxx'", please use command "pip install xxx" to repair.
+
 # 1. Import the module
 ```python
 from model.nnModel import *
@@ -12,7 +13,7 @@ import torch
 ```python
 dataClass = Corpus('./corpus/qingyun.tsv', maxSentenceWordsNum=25)
 ```
->First parameter is your corpus path;  
+>***First parameter*** is your corpus path;  
 >***maxSentenceWordsNum*** will ignore the data whose words number of question or answer is too big;  
 
 Also you can load your corpus. Only your file content formats need to be consistent:
@@ -30,7 +31,7 @@ model = Seq2Seq(dataClass, featureSize=256, hiddenSize=256,
                 encoderBidirectional=True, 
                 device=torch.device('cuda:0'))
 ```
->First parameter is your corpus class object.  
+>***First parameter*** is your corpus class object.  
 >***featureSize*** is your word vector size;  
 >***hiddenSize*** is your RNN hidden state size;  
 >***attnType*** is your attention type. It can be 'B' for using Bahdanau Attention Structure or 'L' for using Luong Structure;  
@@ -60,6 +61,17 @@ Finally you need to save your model for future use.
 model.save('model.pkl')
 ```
 >First parameter is the name of model saved.  
+
+Ok, I know you are too lazy to train your own model. Also, you can download my trained model from my Baidu Net Disk. 
+The model below is trained in qingyun corpus.
+|encoder|decoder|attention|data enhance|test size|address|key|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|5×Bi_GRU|3×GRU|Bahdanau(concat)|False|0.1|[link](https://pan.baidu.com/s/1qel4uPNAdVF7Sjl-fzWAuQ)|s55l|
+|5×Bi_GRU|3×GRU|Luong(dot)|False|0.1|[link](https://pan.baidu.com/s/1ftVs682QzmFDqPRdSgN7Zg)|x76r|
+|5×Bi_GRU|3×GRU|Luong(general)|False|0.1|[link](https://pan.baidu.com/s/1uVg4IwnPzCx7H48wFmjWOA)|p3y0|
+|5×Bi_GRU|3×GRU|Luong(concat)|False|0.1|[link](https://pan.baidu.com/s/16SnTTx8CQBhnkEOe6Dj0QA)|xte1|
+|5×Bi_GRU|3×GRU|Luong(general)|False|0.0|[link](https://pan.baidu.com/s/1pn4_6JCco95g9JHxC0R9FQ)|pl5j|
+|5×Bi_GRU|3×GRU|Luong(general)|True|0.0|[link](https://pan.baidu.com/s/1_GHEDRzQyl-R5LIndgQurQ)|0sfe|
 # 4. How to use your model to build a chatbot
 First you need create a Chatbot object.
 ```python
@@ -78,7 +90,7 @@ Or you can use the beam search to generate the answer.
 ```python
 chatbot.predictByBeamSearch("什么是ai", isRandomChoose=True, beamWidth=10)
 ```
->First parameter is your question;  
+>***First parameter*** is your question;  
 >***isRandomChoose*** determines whether probability sampling is performed in the final beamwidth answers.  
 >***beamWidth*** is the search width in beam search;   
 
