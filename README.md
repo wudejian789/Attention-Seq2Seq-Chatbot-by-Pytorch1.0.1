@@ -64,14 +64,14 @@ model.save('model.pkl')
 
 Ok, I know you are too lazy to train your own model. Also, you can download my trained model from my Baidu Net Disk.  
 The model below is trained in qingyun corpus.  
-|encoder|decoder|attention|data enhance|test size|address|key|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|5×Bi_GRU|3×GRU|Bahdanau(concat)|False|0.1|[link](https://pan.baidu.com/s/1qel4uPNAdVF7Sjl-fzWAuQ)|s55l|
-|5×Bi_GRU|3×GRU|Luong(dot)|False|0.1|[link](https://pan.baidu.com/s/1ftVs682QzmFDqPRdSgN7Zg)|x76r|
-|5×Bi_GRU|3×GRU|Luong(general)|False|0.1|[link](https://pan.baidu.com/s/1uVg4IwnPzCx7H48wFmjWOA)|p3y0|
-|5×Bi_GRU|3×GRU|Luong(concat)|False|0.1|[link](https://pan.baidu.com/s/16SnTTx8CQBhnkEOe6Dj0QA)|xte1|
-|5×Bi_GRU|3×GRU|Luong(general)|False|0.0|[link](https://pan.baidu.com/s/1pn4_6JCco95g9JHxC0R9FQ)|pl5j|
-|5×Bi_GRU|3×GRU|Luong(general)|True|0.0|[link](https://pan.baidu.com/s/1_GHEDRzQyl-R5LIndgQurQ)|0sfe|
+|encoder|decoder|attention|data enhance|test size|address|key|  
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|  
+|5×Bi_GRU|3×GRU|Bahdanau(concat)|False|0.1|[link](https://pan.baidu.com/s/1qel4uPNAdVF7Sjl-fzWAuQ)|s55l|  
+|5×Bi_GRU|3×GRU|Luong(dot)|False|0.1|[link](https://pan.baidu.com/s/1ftVs682QzmFDqPRdSgN7Zg)|x76r|  
+|5×Bi_GRU|3×GRU|Luong(general)|False|0.1|[link](https://pan.baidu.com/s/1uVg4IwnPzCx7H48wFmjWOA)|p3y0|  
+|5×Bi_GRU|3×GRU|Luong(concat)|False|0.1|[link](https://pan.baidu.com/s/16SnTTx8CQBhnkEOe6Dj0QA)|xte1|  
+|5×Bi_GRU|3×GRU|Luong(general)|False|0.0|[link](https://pan.baidu.com/s/1pn4_6JCco95g9JHxC0R9FQ)|pl5j|  
+|5×Bi_GRU|3×GRU|Luong(general)|True|0.0|[link](https://pan.baidu.com/s/1_GHEDRzQyl-R5LIndgQurQ)|0sfe|  
 # 4. How to use your model to build a chatbot
 First you need create a Chatbot object.
 ```python
