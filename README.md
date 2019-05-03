@@ -62,8 +62,8 @@ model.save('model.pkl')
 ```
 >First parameter is the name of model saved.  
 
-Ok, I know you are too lazy to train your own model. Also, you can download my trained model from my Baidu Net Disk. 
-The model below is trained in qingyun corpus.
+Ok, I know you are too lazy to train your own model. Also, you can download my trained model from my Baidu Net Disk.  
+The model below is trained in qingyun corpus.  
 |encoder|decoder|attention|data enhance|test size|address|key|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |5×Bi_GRU|3×GRU|Bahdanau(concat)|False|0.1|[link](https://pan.baidu.com/s/1qel4uPNAdVF7Sjl-fzWAuQ)|s55l|
