@@ -168,7 +168,7 @@ class Seq2Seq:
                         bleu = _bleu_score(self.encoderRNN, self.decoderRNN, X, XLens, Y, YLens, self.dataClass.maxSentLen, device=self.device)
                         embAve = _embAve_score(self.encoderRNN, self.decoderRNN, X, XLens, Y, YLens, self.dataClass.maxSentLen, device=self.device)
                         print('test bleu: %.3lf, embAve: %.3lf; '%(bleu, embAve), end='')
-                    restNum = ((itersPerEpoch-i-1)+(epoch-e)*itersPerEpoch)*batchSize
+                    restNum = ((itersPerEpoch-i-1)+(epoch-e-1)*itersPerEpoch)*batchSize
                     speed = (e*itersPerEpoch+i+1)*batchSize/(time.time()-st)
                     print("%.3lf qa/s; remaining time: %.3lfs;"%(speed, restNum/speed))
     def save(self, path):
