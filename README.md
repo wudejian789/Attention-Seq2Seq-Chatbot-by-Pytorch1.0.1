@@ -26,7 +26,7 @@ Also you can load your corpus. Only your file content formats need to be consist
 
 Every line is a question and a answer with a '\t' split.
 # 3. How to train your model
-First you need create a Seq2Seq object.
+First you need to create a Seq2Seq object.
 ```python
 model = Seq2Seq(dataClass, featureSize=256, hiddenSize=256, 
                 attnType='L', attnMethod='general', 
@@ -77,7 +77,7 @@ The model below is trained in qingyun corpus.
 |5×Bi_GRU|3×GRU|Luong(general)|False|0.0|[link](https://pan.baidu.com/s/1pn4_6JCco95g9JHxC0R9FQ)|pl5j|  
 |5×Bi_GRU|3×GRU|Luong(general)|True|0.0|[link](https://pan.baidu.com/s/1_GHEDRzQyl-R5LIndgQurQ)|0sfe|  
 # 4. How to use your model to build a chatbot
-First you need create a Chatbot object.
+First you need to create a Chatbot object.
 ```python
 chatbot = Chatbot('model.pkl')
 ```
@@ -100,4 +100,4 @@ chatbot.predictByBeamSearch("什么是ai", isRandomChoose=True, beamWidth=10)
 
 It will return the answer like "反正不是苹果". Also you can show the probabilities of the beamwidth answers by ***showInfo=True***.
 # 5. Other function
-For other functions, please dig for yourselves.
+For other functions such as data enhance, pretrained word vector, etc, please dig for yourselves.
