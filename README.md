@@ -140,6 +140,6 @@ Thanks very much for the trained word embedding provided by the author.
 ## 2.6 Other function
 For other functions such as data enhance, etc, please dig for yourselves.
 # 3. Reference
-[1] Bahdanau D, Cho K, Bengio Y. Neural machine translation by jointly learning to align and translate[J]. arXiv preprint arXiv:1409.0473, 2014. 
-[2] Luong M T, Pham H, Manning C D. Effective approaches to attention-based neural machine translation[J]. arXiv preprint arXiv:1508.04025, 2015
-[3] [https://pytorch.apachecn.org/docs/1.0/#/](https://pytorch.apachecn.org/docs/1.0/#/)
+[1] Bahdanau D, Cho K, Bengio Y. Neural machine translation by jointly learning to align and translate[J]. arXiv preprint arXiv:1409.0473, 2014.  
+[2] Luong M T, Pham H, Manning C D. Effective approaches to attention-based neural machine translation[J]. arXiv preprint arXiv:1508.04025, 2015.  
+[3] [https://pytorch.apachecn.org/docs/1.0/#/](https://pytorch.apachecn.org/docs/1.0/#/)  
