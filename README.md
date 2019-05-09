@@ -1,3 +1,4 @@
+
 Attention-Seq2Seq-Chatbot-by-Pytorch1.0.1
 ===
 ![totalModel](https://github.com/wudejian789/Attention-Seq2Seq-Chatbot-by-Pytorch1.0.1/blob/master/image/totalModel.png)
@@ -6,13 +7,36 @@ Attention-Seq2Seq-Chatbot-by-Pytorch1.0.1
 Feel free to add my QQ: ***793729558*** to discuss with me.  
 Also you can add the QQ group: ***647303915*** to discuss together.
 
-# 1. Import the module
+# 1. For Entertainment
+## 1.1 Download the trained model
+My trained model is saved in my Baidu Net Disk.  
+The model below is trained in qingyun corpus.  
+
+|encoder|decoder|attention|data enhance|test size|address|key|  
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|  
+|5×Bi_GRU|3×GRU|Bahdanau(concat)|False|0.1|[link](https://pan.baidu.com/s/1qel4uPNAdVF7Sjl-fzWAuQ)|s55l|  
+|5×Bi_GRU|3×GRU|Luong(dot)|False|0.1|[link](https://pan.baidu.com/s/1ftVs682QzmFDqPRdSgN7Zg)|x76r|  
+|5×Bi_GRU|3×GRU|Luong(general)|False|0.1|[link](https://pan.baidu.com/s/1uVg4IwnPzCx7H48wFmjWOA)|p3y0|  
+|5×Bi_GRU|3×GRU|Luong(concat)|False|0.1|[link](https://pan.baidu.com/s/16SnTTx8CQBhnkEOe6Dj0QA)|xte1|  
+|5×Bi_GRU|3×GRU|Luong(general)|False|0.0|[link](https://pan.baidu.com/s/1pn4_6JCco95g9JHxC0R9FQ)|pl5j|  
+|5×Bi_GRU|3×GRU|Luong(general)|True|0.0|[link](https://pan.baidu.com/s/1_GHEDRzQyl-R5LIndgQurQ)|0sfe|  
+
+## 1.2 Running the demo program
+I have offered 2 demo programs: "demoCmd.py" and "demoWeChat.py".  
+Use command " ***python demoCmd.py --model="xxx.pkl" --device="cpu"(or "cuda")*** " to run the cmd demo program.
+>***model*** is your model path;
+>***device*** is your program running environment, "cpu" for CPU or "cuda" for GPU
+
+![run shot](https://github.com/wudejian789/Attention-Seq2Seq-Chatbot-by-Pytorch1.0.1/blob/master/image/demoCmd.png)
+Also you can run "demoWeChat.py" to use the chatbot to reply your WeChat message. The parameters is the same as above.  
+# 2. For Research
+## 2.1 Import the module
 ```python
 from model.nnModel import *
 from model.corpusSolver import *
 import torch
 ```
-# 2. How to load the data
+## 2.2 How to load the data
 ```python
 dataClass = Corpus('./corpus/qingyun.tsv', maxSentenceWordsNum=25)
 ```
@@ -25,7 +49,7 @@ Also you can load your corpus. Only your file content formats need to be consist
 >...
 
 Every line is a question and a answer with a '\t' split.
-# 3. How to train your model
+## 2.3 How to train your model
 First you need to create a Seq2Seq object.
 ```python
 model = Seq2Seq(dataClass, featureSize=256, hiddenSize=256, 
@@ -65,18 +89,9 @@ model.save('model.pkl')
 ```
 >First parameter is the name of model saved.  
 
-Ok, I know you are too lazy to train your own model. Also, you can download my trained model from my Baidu Net Disk.  
-The model below is trained in qingyun corpus.  
+Ok, I know you are too lazy to train your own model. Also you can download my trained model in section **1.1**.
 
-|encoder|decoder|attention|data enhance|test size|address|key|  
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|  
-|5×Bi_GRU|3×GRU|Bahdanau(concat)|False|0.1|[link](https://pan.baidu.com/s/1qel4uPNAdVF7Sjl-fzWAuQ)|s55l|  
-|5×Bi_GRU|3×GRU|Luong(dot)|False|0.1|[link](https://pan.baidu.com/s/1ftVs682QzmFDqPRdSgN7Zg)|x76r|  
-|5×Bi_GRU|3×GRU|Luong(general)|False|0.1|[link](https://pan.baidu.com/s/1uVg4IwnPzCx7H48wFmjWOA)|p3y0|  
-|5×Bi_GRU|3×GRU|Luong(concat)|False|0.1|[link](https://pan.baidu.com/s/16SnTTx8CQBhnkEOe6Dj0QA)|xte1|  
-|5×Bi_GRU|3×GRU|Luong(general)|False|0.0|[link](https://pan.baidu.com/s/1pn4_6JCco95g9JHxC0R9FQ)|pl5j|  
-|5×Bi_GRU|3×GRU|Luong(general)|True|0.0|[link](https://pan.baidu.com/s/1_GHEDRzQyl-R5LIndgQurQ)|0sfe|  
-# 4. How to use your model to build a chatbot
+## 2.4 How to use your model to build a chatbot
 First you need to create a Chatbot object.
 ```python
 chatbot = Chatbot('model.pkl')
@@ -99,5 +114,24 @@ chatbot.predictByBeamSearch("什么是ai", isRandomChoose=True, beamWidth=10)
 >***beamWidth*** is the search width in beam search;   
 
 It will return the answer like "反正不是苹果". Also you can show the probabilities of the beamwidth answers by ***showInfo=True***.
-# 5. Other function
-For other functions such as data enhance, pretrained word vector, etc, please dig for yourselves.
+## 2.5 How to use a trained word embedding
+First you need to calculate 4 variables: 
+>***id2word***: a list of word, and the first two words have to be "\<SOS\>" and "\<EOS\>", e.g., ["\<SOS\>", "\<EOS\>", "你", "天空", "人工智能", "中国", ...];  
+>***word2id***: a dict with the key of ***word*** and the value of ***id***, corresponding to ***id2word***, e.g., {0:"\<SOS\>", 1:"\<EOS\>", 2:"你", 3:"天空", 4:"人工智能", 5:"中国", ...};  
+>***wordNum***: the total number of words. It is equal to len(id2word) or len(word2id);  
+>***wordEmb***: the word embedding array with shape (wordNum, featureSize) and the word order need to be consistent with id2word or word2id;  you can random initialize the vector or "\<SOS\>" and "\<EOS\>";  
+
+Then add first three parameters when you load the data. 
+```python
+dataClass = Corpus(..., id2word=id2word, word2id=word2id, wordNum=wordNum)
+```
+Next you need to calculate create the word embedding object.
+```python
+embedding = torch.nn.Embedding.from_pretrained(torch.tensor(wordEmb))
+```
+Finally add the embedding parameter when you create the Seq2Seq object.
+```python
+model = Seq2Seq(..., embedding=embedding)
+```
+## 2.6 Other function
+For other functions such as data enhance, etc, please dig for yourselves.
