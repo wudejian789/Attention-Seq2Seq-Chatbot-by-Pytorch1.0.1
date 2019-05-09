@@ -24,8 +24,8 @@ The model below is trained in qingyun corpus.
 ## 1.2 Running the demo program
 I have offered 2 demo programs: "demoCmd.py" and "demoWeChat.py".  
 Use command " ***python demoCmd.py --model="xxx.pkl" --device="cpu"(or "cuda")*** " to run the cmd demo program.
->***model*** is your model path;
->***device*** is your program running environment, "cpu" for CPU or "cuda" for GPU
+>***model*** is your model path;  
+>***device*** is your program running environment, "cpu" for CPU or "cuda" for GPU;  
 
 ![run shot](https://github.com/wudejian789/Attention-Seq2Seq-Chatbot-by-Pytorch1.0.1/blob/master/image/demoCmd.png)
 Also you can run "demoWeChat.py" to use the chatbot to reply your WeChat message. The parameters is the same as above.  
@@ -48,7 +48,9 @@ Also you can load your corpus. Only your file content formats need to be consist
 >Q  A  
 >...
 
-Every line is a question and a answer with a '\t' split.
+Every line is a question and a answer with a '\t' split.  
+The corpus comes from [https://github.com/codemayq/chinese_chatbot_corpus](https://github.com/codemayq/chinese_chatbot_corpus), you can get larger corpus from this Github.  
+Thanks very much for the corpus summarized and processed by the author.  
 ## 2.3 How to train your model
 First you need to create a Seq2Seq object.
 ```python
@@ -133,5 +135,11 @@ Finally add the embedding parameter when you create the Seq2Seq object.
 ```python
 model = Seq2Seq(..., embedding=embedding)
 ```
+Also you can download a trained word embedding from [https://github.com/Embedding/Chinese-Word-Vectors](https://github.com/Embedding/Chinese-Word-Vectors).  
+Thanks very much for the trained word embedding provided by the author.  
 ## 2.6 Other function
 For other functions such as data enhance, etc, please dig for yourselves.
+# 3. Reference
+[1] Bahdanau D, Cho K, Bengio Y. Neural machine translation by jointly learning to align and translate[J]. arXiv preprint arXiv:1409.0473, 2014. 
+[2] Luong M T, Pham H, Manning C D. Effective approaches to attention-based neural machine translation[J]. arXiv preprint arXiv:1508.04025, 2015
+[3] [https://pytorch.apachecn.org/docs/1.0/#/](https://pytorch.apachecn.org/docs/1.0/#/)
