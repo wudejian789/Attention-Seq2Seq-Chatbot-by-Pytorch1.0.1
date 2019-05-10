@@ -123,11 +123,11 @@ First you need to calculate 4 variables:
 >***wordNum***: the total number of words. It is equal to len(id2word) or len(word2id);  
 >***wordEmb***: the word embedding array with shape (wordNum, featureSize) and the word order need to be consistent with id2word or word2id;  you can random initialize the vector or "\<SOS\>" and "\<EOS\>";  
 
-Then add first three parameters when you load the data. 
+Then add first three variables as parameters when you load the data. 
 ```python
 dataClass = Corpus(..., id2word=id2word, word2id=word2id, wordNum=wordNum)
 ```
-Next you need to calculate create the word embedding object.
+Next you need to create the word embedding object.
 ```python
 embedding = torch.nn.Embedding.from_pretrained(torch.tensor(wordEmb))
 ```
