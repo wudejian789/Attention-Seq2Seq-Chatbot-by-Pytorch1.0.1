@@ -119,7 +119,7 @@ It will return the answer like "反正不是苹果". Also you can show the proba
 ## 2.5 How to use a trained word embedding
 First you need to calculate 4 variables: 
 >***id2word***: a list of word, and the first two words have to be "\<SOS\>" and "\<EOS\>", e.g., ["\<SOS\>", "\<EOS\>", "你", "天空", "人工智能", "中国", ...];  
->***word2id***: a dict with the key of ***word*** and the value of ***id***, corresponding to ***id2word***, e.g., {0:"\<SOS\>", 1:"\<EOS\>", 2:"你", 3:"天空", 4:"人工智能", 5:"中国", ...};  
+>***word2id***: a dict with the key of ***word*** and the value of ***id***, corresponding to ***id2word***, e.g., {"\<SOS\>":0, "\<EOS\>":1, "你":2, "天空":3, "人工智能":4, "中国":5, ...};  
 >***wordNum***: the total number of words. It is equal to len(id2word) or len(word2id);  
 >***wordEmb***: the word embedding array with shape (wordNum, featureSize) and the word order need to be consistent with id2word or word2id;  you can random initialize the vector or "\<SOS\>" and "\<EOS\>";  
 
