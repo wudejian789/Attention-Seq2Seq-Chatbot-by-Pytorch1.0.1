@@ -4,12 +4,15 @@ import torch
 from sklearn.model_selection import train_test_split
 
 class Corpus:
-    def __init__(self, filePath, maxSentenceWordsNum=-1, id2word=None, word2id=None, wordNum=None, tfidf=False, QIDF=None, AIDF=None, testSize=0.0):
+    def __init__(self, filePath, maxSentenceWordsNum=-1, id2word=None, word2id=None, wordNum=None, tfidf=False, QIDF=None, AIDF=None, testSize=0.0, isCharVec=False):
         self.id2word, self.word2id, self.wordNum = id2word, word2id, wordNum
         with open(filePath,'r',encoding='utf8') as f:
             txt = self._purify(f.readlines())
             data = [i.split('\t') for i in txt]
-            data = [[jieba.lcut(i[0]), jieba.lcut(i[1])] for i in data]
+            if isCharVec:
+                data = [[[c for c in i[0]], [c for c in i[1]]] for i in data]
+            else:
+                data = [[jieba.lcut(i[0]), jieba.lcut(i[1])] for i in data]
             data = [i for i in data if (len(i[0])<maxSentenceWordsNum and len(i[1])<maxSentenceWordsNum) or maxSentenceWordsNum==-1]
         self.chatDataWord = data
         self._word_id_map(data)
