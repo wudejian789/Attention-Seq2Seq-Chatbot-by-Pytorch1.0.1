@@ -5,7 +5,8 @@ Attention-Seq2Seq-Chatbot-by-Pytorch1.0.1
 >Note: If there's any error like "No module named 'xxx'", please use command "pip install xxx" to repair.  
 
 Feel free to add my QQ: ***793729558*** to discuss with me.  
-Also you can add the QQ group: ***647303915*** to discuss together.
+Also you can add the QQ group: ***647303915*** to discuss together.  
+My paper is [here](https://github.com/wudejian789/Attention-Seq2Seq-Chatbot-by-Pytorch1.0.1/blob/master/基于深度学习的聊天机器人实现\(第三稿\).pdf).  
 
 # 1. For Entertainment
 ## 1.1 Download the trained model
