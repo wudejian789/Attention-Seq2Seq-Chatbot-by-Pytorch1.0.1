@@ -56,7 +56,7 @@ class Corpus:
     def one_epoch_data_stream(self, batchSize=128, isDataEnhance=False, dataEnhanceRatio=0.2, type='train'):
         idList = self.trainIdList if type=='train' else self.testIdList
         eosToken = self.word2id['<EOS>']
-        for i in range(len(idList)//batchSize):
+        for i in range((len(idList)+batchSize-1)//batchSize):
             samples = idList[i*batchSize:(i+1)*batchSize]
             if isDataEnhance:
                 yield self._dataEnhance(samples, dataEnhanceRatio, eosToken, unkToken)
